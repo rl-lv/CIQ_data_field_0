@@ -6,7 +6,7 @@ function timerFormat(seconds as Number) {
 
     var retval = "";
     if (hour >= 1) { // are we printing it at all?
-        retval += (hour >=10) ? hour.format("%02i") : hour.format("%01i");
+        retval += (hour >= 10) ? hour.format("%02i") : hour.format("%01i");
         retval += ":";
     }
 
