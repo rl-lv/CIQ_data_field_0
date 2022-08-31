@@ -1,4 +1,4 @@
-class timerManagerSolution {
+class timerFormatter {
     var isActive as Boolean;
     var isComplete as Boolean;
     var totalSeconds as Number;
@@ -27,16 +27,16 @@ class timerManagerSolution {
 
     function decrementSeconds() {
         if (self.isActive == true) {
-            if ((self.remainingSeconds - 1) == 0) {
-                self.isComplete = true; // we're done, stop decrementing
+            if ((self.remainingSeconds - 1) == 0) { // 1 still gets decremented to 0
+                self.isComplete = true; // we're done
                 self.isActive = false;
             }
+            self.remainingSeconds -= 1;
         }
-        return (self.remainingSeconds -1);
     }
 
     function formattedString() {
-        var retval = self.isComplete ? timerFormatted(self.remainingSeconds) : "Complete";
+        var retval = self.isComplete ? "Complete" : timerFormatted(self.remainingSeconds);
         return retval;
     }
 
