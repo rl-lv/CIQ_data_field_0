@@ -5,11 +5,26 @@ import Toybox.WatchUi;
 
 class complex_data_field_0View extends WatchUi.DataField {
 
-    hidden var mValue as Numeric;
+    hidden var mValue as String;
+    hidden var timer_Formatter as Object;
 
-    function initialize() {
+    function initialize(timerFormatter as Object) {
         DataField.initialize();
-        mValue = 0.0f;
+        self.timer_Formatter = timerFormatter; // I had issues when these had the same name
+        mValue = timer_Formatter.formattedString(); // total seconds
+    }
+
+    function onTimerStart() as Void {
+        self.timer_Formatter.start();
+       
+    }
+
+    function onTimerStop() as Void{
+        self.timer_Formatter.stop();
+    }
+
+    function onTimerLap () as Void {
+        self.timer_Formatter.reset();
     }
 
     // Set your layout here. Anytime the size of obscurity of
@@ -50,14 +65,8 @@ class complex_data_field_0View extends WatchUi.DataField {
     // Note that compute() and onUpdate() are asynchronous, and there is no
     // guarantee that compute() will be called before onUpdate().
     function compute(info as Activity.Info) as Void {
-        // See Activity.Info in the documentation for available information.
-        if(info has :currentHeartRate){
-            if(info.currentHeartRate != null){
-                mValue = info.currentHeartRate as Number;
-            } else {
-                mValue = 0.0f;
-            }
-        }
+        self.timer_Formatter.decrementSeconds();
+        mValue = timer_Formatter.formattedString();
     }
 
     // Display the value you computed here. This will be called
@@ -73,7 +82,7 @@ class complex_data_field_0View extends WatchUi.DataField {
         } else {
             value.setColor(Graphics.COLOR_BLACK);
         }
-        value.setText(mValue.format("%.2f"));
+        value.setText(mValue);
 
         // Call parent's onUpdate(dc) to redraw the layout
         View.onUpdate(dc);
