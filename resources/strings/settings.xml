@@ -1,0 +1,16 @@
+<settings>
+    <setting propertyKey="@Properties.countDownTime" title="Count Down Time" prompt="Select a timer value">
+        <settingConfig type="list">
+            <listEntry value="60">@Strings.oneMinute</listEntry>
+            <listEntry value="120">@Strings.twoMinutes</listEntry>
+            <listEntry value="180">@Strings.threeMinutes</listEntry>
+            <listEntry value="240">@Strings.fourMinutes</listEntry>
+            <listEntry value="300">@Strings.fiveMinutes</listEntry>
+            <listEntry value="360">@Strings.sixMinutes</listEntry>
+            <listEntry value="420">@Strings.sevenMinutes</listEntry>
+            <listEntry value="480">@Strings.eightMinutes</listEntry>
+            <listEntry value="540">@Strings.nineMinutes</listEntry>
+            <listEntry value="600">@Strings.tenMinutes</listEntry>
+        </settingConfig>
+    </setting>
+</settings>

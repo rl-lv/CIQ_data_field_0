@@ -1,0 +1,3 @@
+<properties>
+    <property id="countDownTime" type="number">360</property>
+</properties>
