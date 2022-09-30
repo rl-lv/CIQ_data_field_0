@@ -8,8 +8,8 @@ class complex_data_field_0App extends Application.AppBase {
 
     function initialize() {
         AppBase.initialize();
-        var duration = 5 * 60;
-        timer_Formatter = new timerFormatter(duration); // I had issues if these had the same name
+        var duration = Application.Properties.getValue("countDownTime");
+        timer_Formatter = new timerFormatter(duration); 
 
         var secondsArr = [
             5,          // 5 seconds 

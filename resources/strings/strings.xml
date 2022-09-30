@@ -1,5 +1,15 @@
 <strings>
     <string id="AppName">complex_data_field_0</string>
-
     <string id="label">My Value</string>
+
+    <string id="oneMinute">1 Minute</string>
+    <string id="twoMinutes">2 Minutes</string>
+    <string id="threeMinutes">3 Minutes</string>
+    <string id="fourMinutes">4 Minutes</string>
+    <string id="fiveMinutes">5 Minutes</string>
+    <string id="sixMinutes">6 Minutes</string>
+    <string id="sevenMinutes">7 Minutes</string>
+    <string id="eightMinutes">8 Minutes</string>
+    <string id="nineMinutes">9 Minutes</string>
+    <string id="tenMinutes">10 Minutes</string>
 </strings>
